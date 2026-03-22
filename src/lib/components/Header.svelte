@@ -11,7 +11,7 @@
 	];
 </script>
 
-<header class="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#FEFFFE]">
+<header class="fixed top-0 left-0 w-screen bg-[#FEFFFE] z-50">
 	<div class="mx-auto max-w-360 px-6">
 		<!-- Main header bar -->
 		<div class="flex min-h-20 items-center md:min-h-24">

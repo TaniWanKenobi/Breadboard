@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import breadboardModel from '$lib/assets/830 Tie Breadboard - 830 Tie Breadboard.gltf?url';
 
 	type SignupFormState = {
 		success?: boolean;
@@ -16,11 +15,60 @@
 		{ label: 'Workshop', hash: 'workshop', id: 'workshop' }
 	] as const;
 
-	let modelViewerReady = $state(false);
+	type ModelPhase = 'idle' | 'preparing' | 'fetching' | 'ready' | 'error';
 
-	onMount(async () => {
+	let modelPhase = $state<ModelPhase>('idle');
+	let modelViewerLoaded = $state(false);
+	let breadboardModel = $state('');
+	let modelSectionEl: HTMLElement;
+
+	function waitForPaint() {
+		return new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+	}
+
+	async function ensureModelViewerLibrary() {
+		if (modelViewerLoaded) return;
 		await import('@google/model-viewer');
-		modelViewerReady = true;
+		modelViewerLoaded = true;
+	}
+
+	async function loadModelViewer() {
+		if (modelPhase === 'preparing' || modelPhase === 'fetching' || modelPhase === 'ready') return;
+
+		modelPhase = 'preparing';
+
+		try {
+			// Let the loading UI paint before heavy module work starts.
+			await waitForPaint();
+			await ensureModelViewerLibrary();
+
+			modelPhase = 'fetching';
+			await waitForPaint();
+
+			const modelModule = await import('$lib/assets/830 Tie Breadboard - 830 Tie Breadboard.gltf?url');
+			breadboardModel = modelModule.default;
+			modelPhase = 'ready';
+		} catch {
+			modelPhase = 'error';
+		}
+	}
+
+	onMount(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				if (entries.some((entry) => entry.isIntersecting)) {
+					// Preload the renderer library near viewport, but do not start fetching
+					// the large model until the user explicitly clicks.
+					void ensureModelViewerLibrary();
+					observer.disconnect();
+				}
+			},
+			{ rootMargin: '320px 0px' }
+		);
+
+		if (modelSectionEl) observer.observe(modelSectionEl);
+
+		return () => observer.disconnect();
 	});
 </script>
 
@@ -115,12 +163,13 @@
 {/each}
 </div>
 
-<section class="mx-auto max-w-360 px-6 pb-16">
+<section class="mx-auto max-w-360 px-6 pb-16" bind:this={modelSectionEl}>
 	<div class="rounded-[12px] border-[1.1px] border-black bg-[#f4f4f4] p-4 shadow-[4px_4px_0_#000]">
-		{#if modelViewerReady}
+		{#if modelPhase === 'ready'}
 			<model-viewer
 				src={breadboardModel}
 				alt="830 tie breadboard 3D model"
+				loading="lazy"
 				camera-controls
 				auto-rotate
 				auto-rotate-delay="900"
@@ -132,8 +181,39 @@
 				style="width:100%;height:460px;background:#e6e6e6;border:1.1px solid #000;"
 			></model-viewer>
 		{:else}
-			<div class="flex h-[460px] items-center justify-center border-[1.1px] border-black bg-[#e6e6e6] text-base text-black/70">
-				Loading 3D model...
+			<div class="flex h-[460px] flex-col items-center justify-center gap-4 border-[1.1px] border-black bg-[#e6e6e6] px-6 text-center text-base text-black/80">
+				<div class="w-full max-w-90" role="status" aria-live="polite">
+					<div class="mb-2 h-2 w-full overflow-hidden rounded border border-black/30 bg-white/70">
+						<div
+							class="h-full bg-[#BD0F32] transition-all duration-300"
+							style={`width:${modelPhase === 'idle' ? '0%' : modelPhase === 'preparing' ? '35%' : modelPhase === 'fetching' ? '75%' : modelPhase === 'error' ? '100%' : '100%'}`}
+						></div>
+					</div>
+					<p class="font-medium text-black">
+						{modelPhase === 'error'
+							? '3D load failed'
+							: modelPhase === 'preparing'
+								? 'Preparing 3D viewer...'
+								: modelPhase === 'fetching'
+									? 'Loading 3D model file...'
+									: '3D model ready to load'}
+					</p>
+					<p class="mt-1 text-sm text-black/70">
+						This file is large and may briefly pause on slower devices.
+					</p>
+				</div>
+				<button
+					type="button"
+					class="h-11 rounded border border-black bg-black px-4 text-sm text-white transition-colors hover:bg-white hover:text-black"
+					onclick={() => void loadModelViewer()}
+					disabled={modelPhase === 'preparing' || modelPhase === 'fetching'}
+				>
+					{modelPhase === 'preparing' || modelPhase === 'fetching'
+						? 'Loading...'
+						: modelPhase === 'error'
+							? 'Retry 3D Preview'
+							: 'Load 3D Preview'}
+				</button>
 			</div>
 		{/if}
 	</div>

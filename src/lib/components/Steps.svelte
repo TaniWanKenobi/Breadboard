@@ -13,7 +13,13 @@
 			</div>
 			<div class="step-image-shell mx-5 mb-5 border-[1.1px] border-black bg-[#D9D9D9]">
 				<div class="h-[161px] w-full overflow-hidden">
-					<img src={designImage} alt="Design project" class="step-image h-full w-full object-cover" />
+					<img
+						src={designImage}
+						alt="Design project"
+						loading="lazy"
+						decoding="async"
+						class="step-image h-full w-full object-cover"
+					/>
 				</div>
 			</div>
 		</div>
@@ -25,7 +31,13 @@
 			</div>
 			<div class="step-image-shell mx-5 mb-5 border-[1.1px] border-black bg-[#D9D9D9]">
 				<div class="h-[161px] w-full overflow-hidden">
-					<img src={kitImage} alt="Receive kit" class="step-image h-full w-full object-cover" />
+					<img
+						src={kitImage}
+						alt="Receive kit"
+						loading="lazy"
+						decoding="async"
+						class="step-image h-full w-full object-cover"
+					/>
 				</div>
 			</div>
 		</div>
@@ -37,7 +49,13 @@
 			</div>
 			<div class="step-image-shell mx-5 mb-5 border-[1.1px] border-black bg-[#D9D9D9]">
 				<div class="h-[161px] w-full overflow-hidden">
-					<img src={buildImage} alt="Build project" class="step-image h-full w-full object-cover" />
+					<img
+						src={buildImage}
+						alt="Build project"
+						loading="lazy"
+						decoding="async"
+						class="step-image h-full w-full object-cover"
+					/>
 				</div>
 			</div>
 		</div>

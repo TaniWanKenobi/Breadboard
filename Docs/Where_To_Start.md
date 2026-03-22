@@ -21,7 +21,92 @@ heck out [@alexren](https://github.com/qcoral/)’s [hwdocs.hackclub.dev](http:/
 
 - Ask in the [\#breadboard](https://hackclub.enterprise.slack.com/archives/C037157AL30) channel on Slack\!
 
----
 
 But \-– the best rule is:
 Search. It. Up.
+---
+
+## Breadboard Mission Board
+
+Pick one mission from each column and you have a project plan.
+
+| Core Build | Nice Upgrade | Show-Off Touch |
+| :--- | :--- | :--- |
+| Blink an LED pattern | Add a mode button | Laser-cut faceplate |
+| Read a sensor value | Add a tiny screen | Boot animation |
+| Make a buzzer alert | Add mute/profile modes | Sound theme |
+| Servo moves on trigger | Add calibration menu | 3D printed enclosure |
+
+---
+
+## Build Quality Checklist
+
+Use this before you call a build version done.
+
+- [ ] Powers on reliably 5 times in a row
+- [ ] Wires are labeled or color-consistent
+- [ ] Core feature works without laptop connected
+- [ ] Buttons and inputs are debounced or stable
+- [ ] You can explain the circuit in under 60 seconds
+- [ ] You captured at least 3 progress photos
+
+---
+
+## Debug Playbook
+
+When something fails, run this in order:
+
+1. Power: confirm voltage and common ground.
+2. Wiring: verify pin-by-pin against your diagram.
+3. Minimal test: strip code to the smallest failing case.
+4. Replace assumptions with measurements.
+5. Ask for help with photos, code, and exact behavior.
+
+```txt
+Good help request format:
+- Goal: what should happen
+- Actual: what happens instead
+- Tried: three things already tested
+- Attach: wiring photo + code snippet + error text
+```
+
+---
+
+## Shipping Your Project Story
+
+Great projects are built twice: once in hardware, once in documentation.
+
+### Your docs should include
+
+- One sentence pitch
+- Parts list with links
+- Wiring diagram or pin map
+- Setup steps someone else can follow
+- Photos or short demo clip
+- What failed and what you changed
+
+### Fast template
+
+```md
+# Project Name
+
+## What it does
+## Why I built it
+## Parts used
+## Wiring
+## Code
+## Lessons learned
+## Next version
+```
+
+---
+
+## Need Ideas Right Now?
+
+- Mood lamp that reacts to room light
+- Desk timer with physical start/stop lever
+- Pomodoro pet that gets happier when you focus
+- Mailbox notifier with distance sensor
+- Tiny weather station with local display
+
+If you build one this weekend, post it in [#breadboard](https://hackclub.enterprise.slack.com/archives/C037157AL30).
