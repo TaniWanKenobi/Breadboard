@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import breadboardModel from '$lib/assets/830 Tie Breadboard - 830 Tie Breadboard.gltf?url';
+
 	type SignupFormState = {
 		success?: boolean;
 		message?: string;
@@ -12,6 +15,13 @@
 		{ label: 'Gallery', hash: 'gallery', id: 'gallery' },
 		{ label: 'Workshop', hash: 'workshop', id: 'workshop' }
 	] as const;
+
+	let modelViewerReady = $state(false);
+
+	onMount(async () => {
+		await import('@google/model-viewer');
+		modelViewerReady = true;
+	});
 </script>
 
 <section class="mx-auto max-w-360 px-6 py-16">
@@ -104,6 +114,30 @@
 	</div>
 {/each}
 </div>
+
+<section class="mx-auto max-w-360 px-6 pb-16">
+	<div class="rounded-[12px] border-[1.1px] border-black bg-[#f4f4f4] p-4 shadow-[4px_4px_0_#000]">
+		{#if modelViewerReady}
+			<model-viewer
+				src={breadboardModel}
+				alt="830 tie breadboard 3D model"
+				camera-controls
+				auto-rotate
+				auto-rotate-delay="900"
+				rotation-per-second="28deg"
+				touch-action="pan-y"
+				environment-image="neutral"
+				exposure="1"
+				shadow-intensity="1"
+				style="width:100%;height:460px;background:#e6e6e6;border:1.1px solid #000;"
+			></model-viewer>
+		{:else}
+			<div class="flex h-[460px] items-center justify-center border-[1.1px] border-black bg-[#e6e6e6] text-base text-black/70">
+				Loading 3D model...
+			</div>
+		{/if}
+	</div>
+</section>
 <style>
 	.btn-group {
 		background: none;

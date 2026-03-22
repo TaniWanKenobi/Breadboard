@@ -11,10 +11,10 @@
 	];
 </script>
 
-<header class="w-full">
+<header class="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#FEFFFE]">
 	<div class="mx-auto max-w-360 px-6">
 		<!-- Main header bar -->
-		<div class="flex min-h-20 items-center bg-[#FEFFFE] md:min-h-24">
+		<div class="flex min-h-20 items-center md:min-h-24">
 			<!-- Logo -->
 			<a href="/" class="px-2 py-3">
 				<img src={breadboardLogo} alt="Breadboard" class="h-12 w-auto md:h-14" />
@@ -38,12 +38,10 @@
 				target="_blank"
 				rel="noopener noreferrer"
 				aria-label="Hack Club"
-				class="px-3 py-3 sm:px-4"
+				class="hc-badge-link px-3 py-3 sm:px-4"
 			>
 				<img src={hackClubFlag} alt="Hack Club" class="h-11 md:h-12" />
 			</a>
 		</div>
-
-
 	</div>
 </header>

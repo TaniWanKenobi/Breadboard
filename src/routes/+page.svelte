@@ -31,7 +31,7 @@
 		href="https://hackclub.com"
 		target="_blank"
 		rel="noopener noreferrer"
-		class="fixed top-20 left-2 z-999 hidden w-28 xl:block 2xl:w-32"
+		class="hc-badge-link fixed top-20 left-2 z-999 hidden w-28 xl:block 2xl:w-32"
 	>
 		<img
 			src="https://assets.hackclub.com/banners/2026.svg"
