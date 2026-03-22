@@ -9,6 +9,7 @@
 
 	const topLevelItems: LinkItem[] = [
 		{ label: 'Start here!', href: '/get-started' },
+		{ label: 'Readme', href: '/readme' },
 		{ label: 'FAQ', href: '/faq' }
 	];
 

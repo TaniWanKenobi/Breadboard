@@ -106,7 +106,20 @@ select:focus-visible {
 a {
 	position: relative;
 	text-decoration: none;
+	color: #bc0f32;
 }
+
+.prose a {
+	color: #bc0f32;
+}
+
+a.btn,
+a.sb-item,
+nav a,
+footer a {
+	color: inherit;
+}
+
 
 a::after {
 	content: '';
