@@ -7,7 +7,7 @@
 <section class="mx-auto max-w-[1440px] px-6 py-12">
 	<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
 		<!-- Step 1: Design Your Project -->
-		<div class="step-card overflow-hidden rounded-[5px] border-[1.1px] border-black bg-[#BD0F32]">
+		<a href="/get-started" class="step-card overflow-hidden rounded-[5px] border-[1.1px] border-black bg-[#BD0F32]">
 			<div class="px-5 py-6">
 				<h3 class="text-center text-[34px] font-medium tracking-[0.08em] text-white">Design Your Project</h3>
 			</div>
@@ -22,10 +22,10 @@
 					/>
 				</div>
 			</div>
-		</div>
+		</a>
 
 		<!-- Step 2: Receive Your Kit -->
-		<div class="step-card overflow-hidden rounded-[5px] border-[1.1px] border-black bg-[#BD0F32]">
+		<a href="/requirements" class="step-card overflow-hidden rounded-[5px] border-[1.1px] border-black bg-[#BD0F32]">
 			<div class="px-5 py-6">
 				<h3 class="text-center text-[34px] font-medium tracking-[0.08em] text-white">Receive Your Kit</h3>
 			</div>
@@ -40,10 +40,10 @@
 					/>
 				</div>
 			</div>
-		</div>
+		</a>
 
 		<!-- Step 3: Build It! -->
-		<div class="step-card overflow-hidden rounded-[5px] border-[1.1px] border-black bg-[#BD0F32]">
+		<a href="/gallery" class="step-card overflow-hidden rounded-[5px] border-[1.1px] border-black bg-[#BD0F32]">
 			<div class="px-5 py-6">
 				<h3 class="text-center text-[34px] font-medium tracking-[0.08em] text-white">Build It!</h3>
 			</div>
@@ -58,7 +58,7 @@
 					/>
 				</div>
 			</div>
-		</div>
+		</a>
 	</div>
 </section>
 

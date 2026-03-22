@@ -1,5 +1,6 @@
 <script lang="ts">
 	import DocsFrame from '$lib/components/DocsFrame.svelte';
+	import { localizeHref } from '$lib/paraglide/runtime';
 </script>
 
 <DocsFrame>
@@ -139,7 +140,7 @@
 
 			<h2>4. Make it and submit</h2>
 			<p>
-				Check the <strong>Example Submission</strong> and <strong>What is a Shipped Project</strong> pages to see exactly what you need to turn in. At minimum you need a build log with photos and a demo video of your project working.
+				Check the <a href={localizeHref('/guides/example-submission')}><strong>Example Submission</strong></a> and <a href={localizeHref('/project-resources/what-is-a-shipped-project')}><strong>What is a Shipped Project</strong></a> pages to see exactly what you need to turn in. At minimum you need a build log with photos and a demo video of your project working.
 			</p>
 			<p>
 				Once you're done, you can keep going. Submit more designs and redeem components from the shop.
