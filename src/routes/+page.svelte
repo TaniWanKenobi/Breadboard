@@ -26,6 +26,8 @@
 	});
 </script>
 
+<Header />
+
 <div class="page-grid-bg relative min-h-screen bg-transparent">
 	<a
 		href="https://hackclub.com"
@@ -39,13 +41,13 @@
 			class="block w-full border-0"
 		/>
 	</a>
-	<Header />
 	<Hero />
 	<Headline {form} />
 	<Steps />
 	<FAQ />
-	<Footer />
 </div>
+
+<Footer />
 
 <button
 	class="fixed bottom-8 left-1/2 -translate-x-1/2 animate-bounce transition-opacity duration-300 {scrolled ? 'pointer-events-none opacity-0' : 'opacity-100'}"

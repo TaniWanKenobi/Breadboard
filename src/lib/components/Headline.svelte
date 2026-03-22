@@ -10,9 +10,9 @@
 	let { form }: { form?: SignupFormState } = $props();
 
 	const actionButtons = [
-		{ label: 'Get started', hash: 'get-started', id: 'start' },
-		{ label: 'Gallery', hash: 'gallery', id: 'gallery' },
-		{ label: 'Workshop', hash: 'workshop', id: 'workshop' }
+		{ label: 'Get started', href: '/get-started', id: 'start' },
+		{ label: 'Gallery', href: '/gallery', id: 'gallery' },
+		{ label: 'Workshop', href: '/workshop', id: 'workshop' }
 	] as const;
 
 	type ModelPhase = 'idle' | 'preparing' | 'fetching' | 'ready' | 'error';
@@ -121,8 +121,8 @@
 <!-- Full-width button grid with equal thirds -->
 <div class="w-full grid grid-cols-3 gap-0">
 			{#each actionButtons as btn (btn.id)}
-		<div class="flex flex-col items-center justify-center gap-2 text-center text-black py-8">
-			<button class="btn-group" aria-label={`${btn.label} red pushbutton`} onclick={() => window.location.hash = btn.hash}>
+		<div class="flex flex-col items-center justify-center gap-2 py-8 text-center text-black">
+			<button class="btn-group" aria-label={`${btn.label} red pushbutton`} onclick={() => (window.location.href = btn.href)}>
 						<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" width="80" height="80">
 							<defs>
 								<linearGradient id={`gr-red-up-${btn.id}`} x1="0" y1="0" x2="1" y2="1">

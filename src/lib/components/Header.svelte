@@ -3,11 +3,11 @@
 	import hackClubFlag from '$lib/assets/Hack_Club_Flag.svg';
 
 	const navLinks = [
-		{ label: 'Get Started', href: '#get-started' },
-		{ label: 'Gallery', href: '#gallery' },
-		{ label: 'Guides', href: '#guides' },
+		{ label: 'Get Started', href: '/get-started' },
+		{ label: 'Gallery', href: '/gallery' },
+		{ label: 'Guides', href: '/guides' },
 		{ label: 'Docs', href: '/Docs/Where_To_Start.md' },
-		{ label: 'FAQ', href: '#faq' }
+		{ label: 'FAQ', href: '/faq' }
 	];
 </script>
 
