@@ -11,9 +11,9 @@
 				<span>|</span>
 				<a href="https://hackclub.com/slack" class="hover:underline">Slack</a>
 				<span>|</span>
-				<a href="https://youtube.com/@hackclub" class="hover:underline">YouTube</a>
+				<a href="https://www.youtube.com/@HackClubHQ" class="hover:underline">YouTube</a>
 				<span>|</span>
-				<a href="https://instagram.com/hackclub" class="hover:underline">Instagram</a>
+				<a href="https://www.instagram.com/starthackclub/" class="hover:underline">Instagram</a>
 			</div>
 
 			<p class="mx-auto max-w-4xl text-base leading-relaxed text-white/90 md:text-lg">
