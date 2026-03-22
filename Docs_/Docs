@@ -1,0 +1,118 @@
+# FAQ
+ 
+Welcome to the FAQ! This page attempts to point you to the right place when you have a question. It'll be constantly updated throughout the event as more questions get asked!
+As always, if anything is unclear, ask in #breadboard for help!
+
+## What is this all about?
+Breadboard is a YSWS (You Ship, We Ship) program run by Hack Club, a global community of high school hackers.
+ 
+The goal is simple: build something real on a breadboard. **Not just a schematic**, but a working prototype with a purpose, a polished enclosure, and a build log to show how you got there. 
+Ship it, and we'll ship you a component kit to keep building with.
+ 
+## Where do I get started?
+Check out our getting started doc, which walks you through what a valid project looks like, links to a sample project so you can see the general direction, and includes tutorials and component references to help you along the way. Projects are submitted via GitHub, and our Hack Club Slack channel is where you can ask questions, share progress, and get feedback.
+ 
+## But I'm a beginner and don't know hardware
+No problem! **This YSWS is focused towards beginners.** The getting started doc and tutorials are designed to help you build your first circuit even if you've never touched a breadboard before. The kit has everything you need!
+ 
+## What do I need to submit?
+A valid Breadboard submission has three parts:
+1. **A working breadboard prototype**: a circuit that actually does something with a clear purpose
+2. **A polished enclosure**: a CAD-designed case that turns your project into something finished and real
+
+After you receive your breadboard, you will have to submit:
+
+3. **A build log + demo**: photos or video of the build process and a demo of it working
+  
+## What will I get?
+You'll choose one of two component kits:
+
+<div style="display: flex; gap: 2rem; align-items: flex-start;">
+
+<div>
+
+[**Kit A: ESP32 Starter Kit**](https://www.alibaba.com/product-detail/Basic-Starter-Kit-for-ESP32-ESP_1601458696838.html)
+
+| Component | Qty |
+|---|---|
+| ESP32 Development Board | 1 |
+| 0.96" OLED Display | 1 |
+| DHT11 Temperature & Humidity Module | 1 |
+| HC-SR501 PIR Motion Sensor | 1 |
+| Obstacle Avoidance Module | 1 |
+| Photosensitive Resistor Module | 1 |
+| Resistors (220Ω / 1K / 10K) | 30 |
+| Potentiometer 10K | 1 |
+| Passive Buzzer | 1 |
+| Active Buzzer | 1 |
+| 5V 2-Channel Relay Module | 1 |
+| Button Switch | 6 |
+| Red LED | 5 |
+| Yellow LED | 5 |
+| Green LED | 5 |
+| RGB LED | 2 |
+| 830 Tie-Point Breadboard | 1 |
+| F-M DuPont Cable | 10 |
+| F-F DuPont Cable | 10 |
+| M-M DuPont Cable | 10 |
+| Micro-USB Cable | 1 |
+
+</div>
+
+<div>
+
+[**Kit B: Arduino UNO Starter Kit**](https://www.alibaba.com/product-detail/Jubaolai-Starter-Kit-for-UNO-R3_1600761988959.html)
+
+| Component | Qty |
+|---|---|
+| UNO MEGA328P R3 | 1 |
+| MB-102 Breadboard | 1 |
+| LCD1602 (blue) | 1 |
+| LCD1602 I2C Adapter | 1 |
+| DHT11 Module | 1 |
+| LM35DZ | 1 |
+| Thermistor | 3 |
+| RC522 RFID Module | 1 |
+| Water Level Module | 1 |
+| Infrared Transmitter | 1 |
+| Infrared Receiver | 1 |
+| Remote Control | 1 |
+| Remote Control LED Module | 1 |
+| Resistance 1/6W 220R | 8 |
+| Resistance 1/6W 1K | 5 |
+| Resistance 1/6W 10K | 6 |
+| Potentiometer 5K | 1 |
+| Passive Buzzer | 1 |
+| 5V Buzzer | 1 |
+| 74HC595N Shift Register | 1 |
+| HDX Vibration Switch | 2 |
+| Tact Switch 12x12 | 4 |
+| 4x4 Button Module | 1 |
+| Rocker (5-pin) | 1 |
+| LED Yellow F5 | 5 |
+| LED Red F5 | 5 |
+| LED Blue F5 | 5 |
+| Dot Matrix Module 8x8 | 1 |
+| ULN2003 Module | 1 |
+| SG90 Servo | 1 |
+| Stepper Motor | 1 |
+| Microphone Module | 1 |
+| 5V 1-Way Relay Module | 1 |
+| 1-Digit Digital Tube | 1 |
+| 4-Digit Digital Tube | 1 |
+| DS1302 RTC Module | 1 |
+| Dupont Line 20cm M-F | 10 |
+| 9V Battery Connector | 1 |
+| USB Cable | 1 |
+| Breadboard Wires | 1 |
+
+</div>
+
+</div>
+
+> Note: Although at first glance the Arduino kit has more, do research to see what you need! For instance, ESP32s are more compact, and have WiFi and Blueprint capabilities
+
+After your first ship, there will be a shop where you can submit more projects and redeem additional kits and components.
+ 
+## Who runs this?
+This is organized by Hack Club, a 501(c)(3) nonprofit that supports a global community of 105,892 and counting high school makers.
