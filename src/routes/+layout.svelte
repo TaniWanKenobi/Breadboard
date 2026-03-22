@@ -65,7 +65,7 @@
 		};
 		document.addEventListener('click', clickHandler);
 
-		const revealTargets = document.querySelectorAll('section, .faq-card, .reveal-on-scroll');
+		const revealTargets = document.querySelectorAll('section:not(.docs-page section), .faq-card, .reveal-on-scroll');
 		revealTargets.forEach((node) => node.classList.add('reveal-on-scroll'));
 
 		const observer = new IntersectionObserver(
