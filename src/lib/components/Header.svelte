@@ -6,17 +6,18 @@
 		{ label: 'Get Started', href: '/get-started' },
 		{ label: 'Gallery', href: '/gallery' },
 		{ label: 'Guides', href: '/guides' },
-		{ label: 'Docs', href: '/Docs/Where_To_Start.md' },
 		{ label: 'FAQ', href: '/faq' }
 	];
+
+	let { isSticky = false } = $props();
 </script>
 
-<header class="fixed top-0 left-0 w-screen bg-[#FEFFFE] z-50">
+<header class={`${isSticky ? 'sticky' : 'fixed'} top-0 left-0 w-screen bg-[#FEFFFE] z-50`}>
 	<div class="mx-auto max-w-360 px-6">
 		<!-- Main header bar -->
 		<div class="flex min-h-20 items-center md:min-h-24">
 			<!-- Logo -->
-			<a href="/" class="px-2 py-3">
+			<a href="/" class="py-3">
 				<img src={breadboardLogo} alt="Breadboard" class="h-12 w-auto md:h-14" />
 			</a>
 
