@@ -26,6 +26,24 @@
 
 			<p>Stuck? Ask in <a href="https://hackclub.slack.com">#breadboard</a> before DMing us. Odds are someone else had the same question.</p>
 
+			<div class="not-prose my-6 rounded-[10px] border-[1.1px] border-black bg-white p-6 shadow-[3px_3px_0_#000]">
+				<p class="mb-3 text-sm font-bold uppercase tracking-wide text-black">A shipped design means all three of these:</p>
+				<ul class="space-y-3 text-sm text-black">
+					<li class="flex items-start gap-3">
+						<span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-[1.1px] border-black bg-black text-xs text-white">1</span>
+						<span><strong>A complete CAD assembly with a polished enclosure.</strong> Not a bare breadboard sitting loose. Your circuit needs to live inside a real, designed case with proper mounting. Screws, clips, or press fits. Something you'd actually hand to someone.</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-[1.1px] border-black bg-black text-xs text-white">2</span>
+						<span><strong>Firmware, if your project has a microcontroller.</strong> Even if it's untested, it needs to exist and be in your repo. A microcontroller with no code is just a paperweight.</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-[1.1px] border-black bg-black text-xs text-white">3</span>
+						<span><strong>A working physical build with a demo.</strong> You built it, you proved it works. A video showing it doing its thing is required at the build stage.</span>
+					</li>
+				</ul>
+			</div>
+
 			<h2>Stage 1: Design Submission</h2>
 			<p>This is what you submit before we send you anything. It should prove that you've thought your project through and that someone else could understand and replicate it.</p>
 
@@ -80,7 +98,7 @@
 			</ul>
 
 			<div class="rounded-lg border border-red-300 bg-red-50 p-4 text-red-800">
-				<strong>⚠️ Warning:</strong> Submitting stolen or AI-generated work can result in a permanent ban from this program and other Hack Club programs. Don't do it.
+				<strong>Warning:</strong> Submitting stolen or AI-generated work can result in a permanent ban from this program and other Hack Club programs. Don't do it.
 			</div>
 		</div>
 	</section>

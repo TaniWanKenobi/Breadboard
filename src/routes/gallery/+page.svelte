@@ -12,6 +12,10 @@
 			<p class="mt-2 text-base text-black/80">Browse build stages and project inspiration.</p>
 		</section>
 
+		<section class="rounded-[12px] border-[1.1px] border-black bg-[#f4f4f4] p-8 shadow-[4px_4px_0_#000]">
+			<p class="text-base text-black/50 italic">None submitted yet. Page in progress.</p>
+		</section>
+
 		<Steps />
 	</main>
 
