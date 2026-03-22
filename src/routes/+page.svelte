@@ -26,7 +26,7 @@
 	});
 </script>
 
-<div class="relative min-h-screen bg-white">
+<div class="page-grid-bg relative min-h-screen bg-transparent">
 	<a
 		href="https://hackclub.com"
 		target="_blank"
