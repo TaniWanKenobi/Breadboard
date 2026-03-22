@@ -1,3 +1,11 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+@theme {
+	--font-mono: 'Share Tech Mono', monospace;
+}
+
+body {
+	font-family: 'Share Tech Mono', monospace;
+}
