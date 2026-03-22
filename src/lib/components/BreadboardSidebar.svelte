@@ -112,7 +112,7 @@
 	.sb-divider {
 		height: 2px;
 		background: repeating-linear-gradient(90deg, #BD0F32 0px, #BD0F32 6px, transparent 6px, transparent 10px);
-		margin: 14px 12px 8px;
+		margin: 0 0 8px;
 	}
 
 	.sb-item {
