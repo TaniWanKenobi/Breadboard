@@ -56,7 +56,7 @@
 		const RING = 3;
 		const WW = 5;
 		const LWW = 10;
-		const LC = '#44aa55';
+		const LC = '#BD0F32';
 
 		const COLS = 42;
 		const ROWS = 5;
@@ -326,5 +326,5 @@
 			clear
 		</button>
 	</div>
-	<canvas bind:this={canvas} style="display:block;cursor:crosshair;border-radius:8px;"></canvas>
+	<canvas bind:this={canvas} style="display:block;cursor:crosshair;border-radius:8px;border:2px solid #000;"></canvas>
 </div>

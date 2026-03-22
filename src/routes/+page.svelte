@@ -7,6 +7,14 @@
 	import FAQ from '$lib/components/FAQ.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
+	type SignupFormState = {
+		success?: boolean;
+		message?: string;
+		email?: string;
+	};
+
+	let { form }: { form?: SignupFormState } = $props();
+
 	let scrolled = $state(false);
 
 	onMount(() => {
@@ -23,7 +31,7 @@
 		href="https://hackclub.com"
 		target="_blank"
 		rel="noopener noreferrer"
-		class="absolute top-0 left-0 z-[999] w-[20%] md:w-40 2xl:w-64"
+		class="fixed top-20 left-2 z-999 hidden w-28 xl:block 2xl:w-32"
 	>
 		<img
 			src="https://assets.hackclub.com/banners/2026.svg"
@@ -33,7 +41,7 @@
 	</a>
 	<Header />
 	<Hero />
-	<Headline />
+	<Headline {form} />
 	<Steps />
 	<FAQ />
 	<Footer />

@@ -3,27 +3,29 @@
 	import hackClubFlag from '$lib/assets/Hack_Club_Flag.svg';
 
 	const navLinks = [
-		{ label: 'Get started', href: '/get-started' },
-		{ label: 'Gallery', href: '/gallery' },
-		{ label: 'Workshop', href: '/workshop' }
+		{ label: 'Get Started', href: '#get-started' },
+		{ label: 'Gallery', href: '#gallery' },
+		{ label: 'Guides', href: '#guides' },
+		{ label: 'Docs', href: '/Docs/Where_To_Start.md' },
+		{ label: 'FAQ', href: '#faq' }
 	];
 </script>
 
 <header class="w-full">
-	<div class="mx-auto max-w-[1440px] px-6">
+	<div class="mx-auto max-w-360 px-6">
 		<!-- Main header bar -->
-		<div class="flex items-center bg-[#FEFFFE]">
+		<div class="flex min-h-20 items-center bg-[#FEFFFE] md:min-h-24">
 			<!-- Logo -->
-			<a href="/" class="px-2 py-1">
-				<img src={breadboardLogo} alt="Breadboard" class="h-[38px] w-[125px]" />
+			<a href="/" class="px-2 py-3">
+				<img src={breadboardLogo} alt="Breadboard" class="h-12 w-auto md:h-14" />
 			</a>
 
 			<!-- Navigation -->
-			<nav class="flex flex-1 items-center gap-6 px-6">
+			<nav class="flex flex-1 items-center justify-center gap-4 px-4 sm:gap-6 sm:px-6 md:gap-8">
 				{#each navLinks as link}
 					<a
 						href={link.href}
-						class="text-sm text-black transition-colors hover:text-[#BD0F32]"
+						class="text-sm font-medium text-black transition-colors hover:text-[#BD0F32] sm:text-base"
 					>
 						{link.label}
 					</a>
@@ -36,9 +38,9 @@
 				target="_blank"
 				rel="noopener noreferrer"
 				aria-label="Hack Club"
-				class="px-4 py-2"
+				class="px-3 py-3 sm:px-4"
 			>
-				<img src={hackClubFlag} alt="Hack Club" class="h-10" />
+				<img src={hackClubFlag} alt="Hack Club" class="h-11 md:h-12" />
 			</a>
 		</div>
 
