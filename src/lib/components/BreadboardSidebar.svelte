@@ -120,8 +120,8 @@
 		align-items: center;
 		gap: 9px;
 		padding: 6px 14px;
-		font-size: 12px;
-		font-family: 'Courier New', monospace;
+		font-size: 18px;
+		font-family: 'Share Tech Mono', monospace;
 		color: #111;
 		cursor: pointer;
 		text-decoration: none;
@@ -147,7 +147,7 @@
 
 	.sb-item.sub {
 		padding-left: 32px;
-		font-size: 11px;
+		font-size: 16.5px;
 		color: #555;
 	}
 
@@ -164,11 +164,11 @@
 		margin: 10px 14px 0;
 		padding: 8px 0 3px;
 		border-top: 1px dashed #bbb;
-		font-size: 9px;
+		font-size: 13.5px;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: #999;
-		font-family: 'Courier New', monospace;
+		font-family: 'Share Tech Mono', monospace;
 	}
 
 	.btn-icon {

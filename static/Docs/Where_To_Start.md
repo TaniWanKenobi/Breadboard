@@ -1,112 +1,131 @@
-1. Think of an idea. What do you want. Chekc the kits. what does it have, what do u need.
+# Start here!
 
-Try to expand on that -- ok a tamagatchi only needs a screen buzzer and buttons, but wouldnt a motion detector be SO COOL so it wakes up when theres motion, or a light sensor so it can sleep
+Welcome to Breadboard! The general flow is simple: design a project, receive a kit, and submit your build.
 
-heck out [@alexren](https://github.com/qcoral/)’s [hwdocs.hackclub.dev](http://hwdocs.hackclub.dev), it has cool tips
+## 1. Read the docs first
 
-### 2. What Software to use?
+**This is important, don't skip it.** Read all the docs before anything else. Then read the guides:
 
-**3D Modeling / CAD?** Use Onshape or Fusion 360\!
+- **Breadboard Basics** covers the fundamentals of working with a breadboard
+- **LED Workshop** walks you through building and controlling a basic circuit
 
-- [**Onshape**](https://www.onshape.com/) is browser-based, great for lower-end machines, and has nice sharing features. Onshape is easier to use as well\! - Free for hobbyists and students
-- [**Autodesk Fusion**](https://www.autodesk.com/products/fusion-360) handles complex models better, but is heavier on your computer. Try both and see what works for you\! - Free for students
+## 2. Pick an idea and choose your kit
 
+Figure out what you want to build, then decide which kit fits best. Don't just think about what you *need*, think about what would make it cooler.
 
-**Modeling PCBs?** Use KiCad or EasyEDA\!
+> A tamagotchi only needs a screen, buzzer, and buttons. But wouldn't a motion detector be SO COOL so it wakes up when there's motion? Or a light sensor so it can sleep in the dark?
 
-- [**KiCad**](https://kicad.org/) is an open source, professional-grade PCB suite that works for introductory projects and complex multi-layer PCB designs\! - Free and Open Source
-- [**EasyEDA**](https://easyeda.com/) is browser-based, beginner-friendly platform for PCB design, but can be limiting for more complex projects. - Free for basic use
+Check out [@alexren](https://github.com/qcoral/)'s [hwdocs.hackclub.dev](http://hwdocs.hackclub.dev) for extra tips and inspiration.
 
-### 3. Building it IRL:
+The two available kits are below. Pick the one that best fits your idea.
 
-- Ask in the [\#breadboard](https://hackclub.enterprise.slack.com/archives/C037157AL30) channel on Slack\!
+<div style="display: flex; gap: 2rem; align-items: flex-start;">
+<div>
 
+[**Kit A: ESP32 Starter Kit**](https://www.alibaba.com/product-detail/Basic-Starter-Kit-for-ESP32-ESP_1601458696838.html)
 
-But \-– the best rule is:
-Search. It. Up.
+| Component | Qty |
+|---|---|
+| ESP32 Development Board | 1 |
+| 0.96" OLED Display | 1 |
+| DHT11 Temperature & Humidity Module | 1 |
+| HC-SR501 PIR Motion Sensor | 1 |
+| Obstacle Avoidance Module | 1 |
+| Photosensitive Resistor Module | 1 |
+| Resistors (220Ω / 1K / 10K) | 30 |
+| Potentiometer 10K | 1 |
+| Passive Buzzer | 1 |
+| Active Buzzer | 1 |
+| 5V 2-Channel Relay Module | 1 |
+| Button Switch | 6 |
+| Red LED | 5 |
+| Yellow LED | 5 |
+| Green LED | 5 |
+| RGB LED | 2 |
+| 830 Tie-Point Breadboard | 1 |
+| F-M DuPont Cable | 10 |
+| F-F DuPont Cable | 10 |
+| M-M DuPont Cable | 10 |
+| Micro-USB Cable | 1 |
+
+</div>
+<div>
+
+[**Kit B: Arduino UNO Starter Kit**](https://www.alibaba.com/product-detail/Jubaolai-Starter-Kit-for-UNO-R3_1600761988959.html)
+
+| Component | Qty |
+|---|---|
+| UNO MEGA328P R3 | 1 |
+| MB-102 Breadboard | 1 |
+| LCD1602 (blue) | 1 |
+| LCD1602 I2C Adapter | 1 |
+| DHT11 Module | 1 |
+| LM35DZ | 1 |
+| Thermistor | 3 |
+| RC522 RFID Module | 1 |
+| Water Level Module | 1 |
+| Infrared Transmitter | 1 |
+| Infrared Receiver | 1 |
+| Remote Control | 1 |
+| Remote Control LED Module | 1 |
+| Resistance 1/6W 220R | 8 |
+| Resistance 1/6W 1K | 5 |
+| Resistance 1/6W 10K | 6 |
+| Potentiometer 5K | 1 |
+| Passive Buzzer | 1 |
+| 5V Buzzer | 1 |
+| 74HC595N Shift Register | 1 |
+| HDX Vibration Switch | 2 |
+| Tact Switch 12x12 | 4 |
+| 4x4 Button Module | 1 |
+| Rocker (5-pin) | 1 |
+| LED Yellow F5 | 5 |
+| LED Red F5 | 5 |
+| LED Blue F5 | 5 |
+| Dot Matrix Module 8x8 | 1 |
+| ULN2003 Module | 1 |
+| SG90 Servo | 1 |
+| Stepper Motor | 1 |
+| Microphone Module | 1 |
+| 5V 1-Way Relay Module | 1 |
+| 1-Digit Digital Tube | 1 |
+| 4-Digit Digital Tube | 1 |
+| DS1302 RTC Module | 1 |
+| Dupont Line 20cm M-F | 10 |
+| 9V Battery Connector | 1 |
+| USB Cable | 1 |
+| Breadboard Wires | 1 |
+
+</div>
+</div>
+
+## 3. What software to use?
+
+<div style="display: flex; gap: 2rem; align-items: flex-start;">
+<div>
+
+**3D modeling / CAD**
+
+- [**Onshape**](https://www.onshape.com/) is browser-based and beginner-friendly, great for lower-end machines. Free for hobbyists and students.
+- [**Autodesk Fusion**](https://www.autodesk.com/products/fusion-360) handles more complex models but is heavier on your computer. Free for students.
+
+</div>
+<div>
+
+**PCB design**
+
+- [**KiCad**](https://kicad.org/) is open source and professional-grade. Works for everything from beginner to complex multi-layer boards. Free.
+- [**EasyEDA**](https://easyeda.com/) is browser-based and beginner-friendly, but more limited for complex projects. Free for basic use.
+
+</div>
+</div>
+
+## 4. Make it and submit
+
+Check the **Example Submission** and **What is a Shipped Project** pages to see exactly what you need to turn in. At minimum you need a build log with photos and a demo video of your project working.
+
+Once you're done, you can keep going. Submit more designs and redeem components from the shop.
+
 ---
 
-## Breadboard Mission Board
-
-Pick one mission from each column and you have a project plan.
-
-| Core Build | Nice Upgrade | Show-Off Touch |
-| :--- | :--- | :--- |
-| Blink an LED pattern | Add a mode button | Laser-cut faceplate |
-| Read a sensor value | Add a tiny screen | Boot animation |
-| Make a buzzer alert | Add mute/profile modes | Sound theme |
-| Servo moves on trigger | Add calibration menu | 3D printed enclosure |
-
----
-
-## Build Quality Checklist
-
-Use this before you call a build version done.
-
-- [ ] Powers on reliably 5 times in a row
-- [ ] Wires are labeled or color-consistent
-- [ ] Core feature works without laptop connected
-- [ ] Buttons and inputs are debounced or stable
-- [ ] You can explain the circuit in under 60 seconds
-- [ ] You captured at least 3 progress photos
-
----
-
-## Debug Playbook
-
-When something fails, run this in order:
-
-1. Power: confirm voltage and common ground.
-2. Wiring: verify pin-by-pin against your diagram.
-3. Minimal test: strip code to the smallest failing case.
-4. Replace assumptions with measurements.
-5. Ask for help with photos, code, and exact behavior.
-
-```txt
-Good help request format:
-- Goal: what should happen
-- Actual: what happens instead
-- Tried: three things already tested
-- Attach: wiring photo + code snippet + error text
-```
-
----
-
-## Shipping Your Project Story
-
-Great projects are built twice: once in hardware, once in documentation.
-
-### Your docs should include
-
-- One sentence pitch
-- Parts list with links
-- Wiring diagram or pin map
-- Setup steps someone else can follow
-- Photos or short demo clip
-- What failed and what you changed
-
-### Fast template
-
-```md
-# Project Name
-
-## What it does
-## Why I built it
-## Parts used
-## Wiring
-## Code
-## Lessons learned
-## Next version
-```
-
----
-
-## Need Ideas Right Now?
-
-- Mood lamp that reacts to room light
-- Desk timer with physical start/stop lever
-- Pomodoro pet that gets happier when you focus
-- Mailbox notifier with distance sensor
-- Tiny weather station with local display
-
-If you build one this weekend, post it in [#breadboard](https://hackclub.enterprise.slack.com/archives/C037157AL30).
+Got questions? Ask in [#breadboard](https://hackclub.enterprise.slack.com/archives/C09EB0AE68M) on Slack. If you build something this weekend, post it there too!
