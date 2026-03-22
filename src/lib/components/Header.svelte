@@ -6,7 +6,8 @@
 		{ label: 'Get Started', href: '/get-started' },
 		{ label: 'Gallery', href: '/gallery' },
 		{ label: 'Guides', href: '/guides' },
-		{ label: 'FAQ', href: '/faq' }
+		{ label: 'FAQ', href: '/faq' },
+		{ label: 'Shop', href: '/shop' }
 	];
 
 	let { isSticky = false } = $props();
