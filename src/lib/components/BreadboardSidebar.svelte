@@ -74,16 +74,8 @@
 	Menu
 </button>
 
-<button
-	type="button"
-	class="sidebar-backdrop {isOpen ? 'show' : ''}"
-	onclick={closeSidebar}
-	aria-label="Close docs navigation"
-	aria-hidden={!isOpen}
-	tabindex={isOpen ? 0 : -1}
-></button>
-
 <aside id="docs-sidebar" class="sidebar {isOpen ? 'open' : ''}">
+	<button class="sidebar-close" type="button" onclick={closeSidebar} aria-label="Close docs navigation">Close</button>
 	<div class="sb-divider"></div>
 
 	{#each topLevelItems as item (item.route)}
@@ -161,29 +153,6 @@
 		}
 	}
 
-	.sidebar-backdrop {
-		position: fixed;
-		inset: 0;
-		z-index: 42;
-		background: rgba(0, 0, 0, 0.35);
-		opacity: 0;
-		pointer-events: none;
-		border: 0;
-		padding: 0;
-		transition: opacity 180ms ease;
-	}
-
-	.sidebar-backdrop.show {
-		opacity: 1;
-		pointer-events: auto;
-	}
-
-	@media (min-width: 768px) {
-		.sidebar-backdrop {
-			display: none;
-		}
-	}
-
 	.sidebar {
 		position: fixed;
 		top: 80px;
@@ -195,7 +164,7 @@
 		display: flex;
 		flex-direction: column;
 		flex-shrink: 0;
-		z-index: 35;
+		z-index: 45;
 		transform: translateX(-105%);
 		transition: transform 200ms ease;
 	}
@@ -208,6 +177,26 @@
 		.sidebar {
 			top: 96px;
 			transform: translateX(0);
+		}
+	}
+
+	.sidebar-close {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		margin: 10px 12px 4px;
+		border: 1.1px solid #111;
+		background: #f4f4f4;
+		color: #111;
+		padding: 6px 10px;
+		font-family: 'Share Tech Mono', monospace;
+		font-size: 13px;
+		box-shadow: 2px 2px 0 #000;
+	}
+
+	@media (min-width: 768px) {
+		.sidebar-close {
+			display: none;
 		}
 	}
 
