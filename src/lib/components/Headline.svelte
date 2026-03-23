@@ -256,7 +256,6 @@
 		right: -10rem;
 		bottom: -25rem;
 		z-index: 20;
-		pointer-events: none;
 		width: min(92vw, 760px);
 		height: auto;
 		filter: drop-shadow(0 18px 16px rgba(0, 0, 0, 0.44));
