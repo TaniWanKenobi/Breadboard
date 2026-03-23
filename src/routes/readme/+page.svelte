@@ -18,6 +18,8 @@
 				<li>As Dev said, I don't think a full login flow is necessary. Submissions will just use Fillout.</li>
 			</ul>
 
+			<p>The 3D model on the front page is a placeholder. It will be replaced with an optimized real submission that isn't just a bare breadboard.</p>
+
 			<p>Please DM me if anything is unclear or if anything can be improved! <strong>Enjoy the website :D</strong></p>
 		</div>
 	</section>
