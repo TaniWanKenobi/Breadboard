@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import { onMount } from 'svelte';
-	import stickerImage from '$lib/assets/sticker.png';
 
 	type SignupFormState = {
 		success?: boolean;
@@ -104,7 +103,7 @@
 					Get Started
 				</button>
 				</form>
-				<img src={stickerImage} alt="Breadboard sticker" class="signup-sticker" loading="lazy" decoding="async" />
+				<img src="/favicon-sticker-cropped.png" alt="Breadboard sticker" class="signup-sticker" loading="lazy" decoding="async" />
 			</div>
 			{#if form?.message}
 				<p class="mt-3 text-sm {form.success ? 'text-white' : 'text-[#ffe0e0]'}">{form.message}</p>
@@ -254,9 +253,10 @@
 	.signup-sticker {
 		position: absolute;
 		right: -10rem;
-		bottom: -25rem;
+		bottom: -16rem;
 		z-index: 20;
-		width: min(92vw, 760px);
+		pointer-events: auto;
+		width: min(36vw, 280px);
 		height: auto;
 		filter: drop-shadow(0 18px 16px rgba(0, 0, 0, 0.44));
 		transform: rotate(-25deg) translateY(0);
@@ -273,8 +273,8 @@
 	@media (max-width: 640px) {
 		.signup-sticker {
 			right: -0.5rem;
-			bottom: -11rem;
-			width: min(88vw, 360px);
+			bottom: -6.5rem;
+			width: min(46vw, 170px);
 		}
 	}
 </style>
