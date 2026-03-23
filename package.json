@@ -51,6 +51,7 @@
 	},
 	"dependencies": {
 		"@google/model-viewer": "^4.2.0",
+		"@supabase/supabase-js": "^2.99.3",
 		"pg": "^8.20.0"
 	}
 }

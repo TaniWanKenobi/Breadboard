@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import { onMount } from 'svelte';
 	import stickerImage from '$lib/assets/sticker.png';
 
@@ -86,7 +87,7 @@
 		<div class="w-full max-w-120 rounded-md border border-black bg-[#BD0F32] p-5 shadow-[4px_4px_0_#000] lg:justify-self-center">
 			<p class="mb-3 text-[20px] leading-none text-white">Learn how &amp; get free stickers!</p>
 			<div class="signup-form-wrap">
-				<form method="POST" action="?/subscribe" class="flex flex-col gap-3 sm:flex-row sm:items-stretch">
+				<form method="POST" action="?/subscribe" use:enhance class="flex flex-col gap-3 sm:flex-row sm:items-stretch">
 				<input
 					name="email"
 					type="email"
@@ -255,6 +256,7 @@
 		right: -10rem;
 		bottom: -25rem;
 		z-index: 20;
+		pointer-events: none;
 		width: min(92vw, 760px);
 		height: auto;
 		filter: drop-shadow(0 18px 16px rgba(0, 0, 0, 0.44));

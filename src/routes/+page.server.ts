@@ -23,7 +23,7 @@ export const actions: Actions = {
 			await saveEmailSignup(email);
 			return {
 				success: true,
-				message: "You're on the list. We'll email you next steps!",
+				message: "Thanks! I'll email you with more details soon.",
 				email: ''
 			};
 		} catch (error) {
