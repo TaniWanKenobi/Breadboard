@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import stickerImage from '$lib/assets/sticker.png';
 
 	type SignupFormState = {
 		success?: boolean;
@@ -84,7 +85,8 @@
 		<!-- Email signup card matching the reference style -->
 		<div class="w-full max-w-120 rounded-md border border-black bg-[#BD0F32] p-5 shadow-[4px_4px_0_#000] lg:justify-self-center">
 			<p class="mb-3 text-[20px] leading-none text-white">Learn how &amp; get free stickers!</p>
-			<form method="POST" action="?/subscribe" class="flex flex-col gap-3 sm:flex-row sm:items-stretch">
+			<div class="signup-form-wrap">
+				<form method="POST" action="?/subscribe" class="flex flex-col gap-3 sm:flex-row sm:items-stretch">
 				<input
 					name="email"
 					type="email"
@@ -100,7 +102,9 @@
 				>
 					Get Started
 				</button>
-			</form>
+				</form>
+				<img src={stickerImage} alt="Breadboard sticker" class="signup-sticker" loading="lazy" decoding="async" />
+			</div>
 			{#if form?.message}
 				<p class="mt-3 text-sm {form.success ? 'text-white' : 'text-[#ffe0e0]'}">{form.message}</p>
 			{/if}
@@ -240,5 +244,36 @@
 
 	.btn-group:active .c-down {
 		display: block;
+	}
+
+	.signup-form-wrap {
+		position: relative;
+	}
+
+	.signup-sticker {
+		position: absolute;
+		right: -10rem;
+		bottom: -25rem;
+		z-index: 20;
+		width: min(92vw, 760px);
+		height: auto;
+		filter: drop-shadow(0 18px 16px rgba(0, 0, 0, 0.44));
+		transform: rotate(-25deg) translateY(0);
+		transition:
+			transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+			filter 280ms cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	.signup-sticker:hover {
+		filter: drop-shadow(0 24px 24px rgba(0, 0, 0, 0.56));
+		transform: rotate(-25deg) translateY(-10px) scale(1.03);
+	}
+
+	@media (max-width: 640px) {
+		.signup-sticker {
+			right: -0.5rem;
+			bottom: -11rem;
+			width: min(88vw, 360px);
+		}
 	}
 </style>
