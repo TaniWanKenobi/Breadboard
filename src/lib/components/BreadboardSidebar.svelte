@@ -1,42 +1,63 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
+
+	type RoutePath =
+		| '/get-started'
+		| '/readme'
+		| '/faq'
+		| '/guides'
+		| '/guides/firmware'
+		| '/workshop'
+		| '/guides/example-submission'
+		| '/requirements'
+		| '/project-resources/what-is-a-shipped-project'
+		| '/project-resources/good-journaling'
+		| '/project-resources/design-tips';
 
 	type LinkItem = {
 		label: string;
+		route: RoutePath;
 		href: string;
 		sub?: boolean;
 	};
 
 	const topLevelItems: LinkItem[] = [
-		{ label: 'Start here!', href: '/get-started' },
-		{ label: 'Readme', href: '/readme' },
-		{ label: 'FAQ', href: '/faq' }
+		{ label: 'Start here!', route: '/get-started', href: resolve('/get-started') },
+		{ label: 'Readme', route: '/readme', href: resolve('/readme') },
+		{ label: 'FAQ', route: '/faq', href: resolve('/faq') }
 	];
 
 	const guideItems: LinkItem[] = [
-		{ label: 'Breadboard Basics', href: '/guides', sub: true },
-		{ label: 'LED Workshop: Build and Control a Circuit', href: '/workshop', sub: true },
-		{ label: 'Example submission', href: '/guides/example-submission', sub: true }
+		{ label: 'Breadboard Basics', route: '/guides', href: resolve('/guides'), sub: true },
+		{ label: 'LED Workshop: Build and Control a Circuit', route: '/workshop', href: resolve('/workshop'), sub: true },
+		{ label: 'Example submission', route: '/guides/example-submission', href: resolve('/guides/example-submission'), sub: true },
+		{ label: 'Firmware Guide', route: '/guides/firmware', href: resolve('/guides/firmware'), sub: true }
 	];
 
-	const requirementsItem: LinkItem = { label: 'Requirements', href: '/requirements' };
+	const requirementsItem: LinkItem = { label: 'Requirements', route: '/requirements', href: resolve('/requirements') };
 
 	const projectResourceItems: LinkItem[] = [
-		{ label: 'What is a shipped project', href: '/project-resources/what-is-a-shipped-project', sub: true },
-		{ label: 'Good Journaling', href: '/project-resources/good-journaling', sub: true },
-		{ label: 'Design tips', href: '/project-resources/design-tips', sub: true }
+		{
+			label: 'What is a shipped project',
+			route: '/project-resources/what-is-a-shipped-project',
+			href: resolve('/project-resources/what-is-a-shipped-project'),
+			sub: true
+		},
+		{ label: 'Good Journaling', route: '/project-resources/good-journaling', href: resolve('/project-resources/good-journaling'), sub: true },
+		{ label: 'Design tips', route: '/project-resources/design-tips', href: resolve('/project-resources/design-tips'), sub: true }
 	];
 
-	function isActive(href: string) {
-		return page.url.pathname === href;
+	function isActive(route: string) {
+		return page.url.pathname === route;
 	}
 </script>
 
 <aside class="sidebar">
 	<div class="sb-divider"></div>
 
-	{#each topLevelItems as item}
-		<a class="sb-item {isActive(item.href) ? 'active' : ''}" href={item.href}>
+	{#each topLevelItems as item (item.route)}
+		<a class="sb-item {isActive(item.route) ? 'active' : ''}" href={resolve(item.route)}>
 			<div class="btn-icon" aria-hidden="true">
 				<div class="btn-outer">
 					<div class="btn-inner"></div>
@@ -47,8 +68,8 @@
 	{/each}
 
 	<div class="sb-section-label">Guides</div>
-	{#each guideItems as item}
-		<a class="sb-item sub {isActive(item.href) ? 'active' : ''}" href={item.href}>
+	{#each guideItems as item (item.route)}
+		<a class="sb-item sub {isActive(item.route) ? 'active' : ''}" href={resolve(item.route)}>
 			<div class="btn-icon" aria-hidden="true">
 				<div class="btn-outer">
 					<div class="btn-inner sub-dot"></div>
@@ -58,7 +79,7 @@
 		</a>
 	{/each}
 
-	<a class="sb-item {isActive(requirementsItem.href) ? 'active' : ''}" href={requirementsItem.href}>
+	<a class="sb-item {isActive(requirementsItem.route) ? 'active' : ''}" href={resolve(requirementsItem.route)}>
 		<div class="btn-icon" aria-hidden="true">
 			<div class="btn-outer">
 				<div class="btn-inner"></div>
@@ -68,8 +89,8 @@
 	</a>
 
 	<div class="sb-section-label">Project resources</div>
-	{#each projectResourceItems as item}
-		<a class="sb-item sub {isActive(item.href) ? 'active' : ''}" href={item.href}>
+	{#each projectResourceItems as item (item.route)}
+		<a class="sb-item sub {isActive(item.route) ? 'active' : ''}" href={resolve(item.route)}>
 			<div class="btn-icon" aria-hidden="true">
 				<div class="btn-outer">
 					<div class="btn-inner sub-dot"></div>
