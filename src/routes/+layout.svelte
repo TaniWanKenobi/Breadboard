@@ -3,7 +3,6 @@
 	import { page } from '$app/state';
 	import { locales, localizeHref } from '$lib/paraglide/runtime';
 	import './layout.css';
-	import favicon from '$lib/assets/sticker.png';
 
 	let { children } = $props();
 
@@ -94,7 +93,11 @@
 	});
 </script>
 
-<svelte:head><link rel="icon" href={favicon} /></svelte:head>
+<svelte:head>
+	<link rel="icon" type="image/png" sizes="512x512" href="/favicon-sticker-cropped.png?v=3" />
+	<link rel="shortcut icon" href="/favicon-sticker-cropped.png?v=3" />
+	<link rel="apple-touch-icon" href="/favicon-sticker-cropped.png?v=3" />
+</svelte:head>
 {@render children()}
 
 <div style="display:none">
