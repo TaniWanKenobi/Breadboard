@@ -21,7 +21,7 @@
 	.docs-main {
 		min-height: 100vh;
 		padding-top: 96px;
-		padding-left: 230px;
+		padding-left: 24px;
 		padding-right: 24px;
 		padding-bottom: 64px;
 	}
@@ -29,6 +29,7 @@
 	@media (min-width: 768px) {
 		.docs-main {
 			padding-top: 112px;
+			padding-left: 230px;
 			padding-right: 32px;
 		}
 	}

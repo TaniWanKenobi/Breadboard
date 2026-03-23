@@ -51,13 +51,43 @@
 	function isActive(route: string) {
 		return page.url.pathname === route;
 	}
+
+	let isOpen = $state(false);
+
+	function closeSidebar() {
+		isOpen = false;
+	}
+
+	function toggleSidebar() {
+		isOpen = !isOpen;
+	}
 </script>
 
-<aside class="sidebar">
+<button
+	class="sidebar-toggle"
+	type="button"
+	onclick={toggleSidebar}
+	aria-controls="docs-sidebar"
+	aria-expanded={isOpen}
+	aria-label="Toggle docs navigation"
+>
+	Menu
+</button>
+
+<button
+	type="button"
+	class="sidebar-backdrop {isOpen ? 'show' : ''}"
+	onclick={closeSidebar}
+	aria-label="Close docs navigation"
+	aria-hidden={!isOpen}
+	tabindex={isOpen ? 0 : -1}
+></button>
+
+<aside id="docs-sidebar" class="sidebar {isOpen ? 'open' : ''}">
 	<div class="sb-divider"></div>
 
 	{#each topLevelItems as item (item.route)}
-		<a class="sb-item {isActive(item.route) ? 'active' : ''}" href={resolve(item.route)}>
+		<a class="sb-item {isActive(item.route) ? 'active' : ''}" href={resolve(item.route)} onclick={closeSidebar}>
 			<div class="btn-icon" aria-hidden="true">
 				<div class="btn-outer">
 					<div class="btn-inner"></div>
@@ -69,7 +99,7 @@
 
 	<div class="sb-section-label">Guides</div>
 	{#each guideItems as item (item.route)}
-		<a class="sb-item sub {isActive(item.route) ? 'active' : ''}" href={resolve(item.route)}>
+		<a class="sb-item sub {isActive(item.route) ? 'active' : ''}" href={resolve(item.route)} onclick={closeSidebar}>
 			<div class="btn-icon" aria-hidden="true">
 				<div class="btn-outer">
 					<div class="btn-inner sub-dot"></div>
@@ -79,7 +109,7 @@
 		</a>
 	{/each}
 
-	<a class="sb-item {isActive(requirementsItem.route) ? 'active' : ''}" href={resolve(requirementsItem.route)}>
+	<a class="sb-item {isActive(requirementsItem.route) ? 'active' : ''}" href={resolve(requirementsItem.route)} onclick={closeSidebar}>
 		<div class="btn-icon" aria-hidden="true">
 			<div class="btn-outer">
 				<div class="btn-inner"></div>
@@ -90,7 +120,7 @@
 
 	<div class="sb-section-label">Project resources</div>
 	{#each projectResourceItems as item (item.route)}
-		<a class="sb-item sub {isActive(item.route) ? 'active' : ''}" href={resolve(item.route)}>
+		<a class="sb-item sub {isActive(item.route) ? 'active' : ''}" href={resolve(item.route)} onclick={closeSidebar}>
 			<div class="btn-icon" aria-hidden="true">
 				<div class="btn-outer">
 					<div class="btn-inner sub-dot"></div>
@@ -111,6 +141,49 @@
 </aside>
 
 <style>
+	.sidebar-toggle {
+		position: fixed;
+		top: 92px;
+		left: 12px;
+		z-index: 46;
+		border: 1.1px solid #111;
+		background: #f4f4f4;
+		color: #111;
+		padding: 8px 12px;
+		font-family: 'Share Tech Mono', monospace;
+		font-size: 14px;
+		box-shadow: 3px 3px 0 #000;
+	}
+
+	@media (min-width: 768px) {
+		.sidebar-toggle {
+			display: none;
+		}
+	}
+
+	.sidebar-backdrop {
+		position: fixed;
+		inset: 0;
+		z-index: 42;
+		background: rgba(0, 0, 0, 0.35);
+		opacity: 0;
+		pointer-events: none;
+		border: 0;
+		padding: 0;
+		transition: opacity 180ms ease;
+	}
+
+	.sidebar-backdrop.show {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	@media (min-width: 768px) {
+		.sidebar-backdrop {
+			display: none;
+		}
+	}
+
 	.sidebar {
 		position: fixed;
 		top: 80px;
@@ -123,11 +196,18 @@
 		flex-direction: column;
 		flex-shrink: 0;
 		z-index: 35;
+		transform: translateX(-105%);
+		transition: transform 200ms ease;
+	}
+
+	.sidebar.open {
+		transform: translateX(0);
 	}
 
 	@media (min-width: 768px) {
 		.sidebar {
 			top: 96px;
+			transform: translateX(0);
 		}
 	}
 
