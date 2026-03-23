@@ -10,12 +10,6 @@
 		</div>
 
 		<div class="prose prose-neutral max-w-none rounded-xl border-[1.1px] border-black bg-[#f4f4f4] p-8 shadow-[4px_4px_0_#000]">
-			<p>
-				A collection of links and references to get you unstuck. This isn't a tutorial: it's a jumping-off
-				point. When you hit a wall, start here.
-			</p>
-
-			<hr />
 
 			<h2>Arduino IDE</h2>
 			<p>The IDE is where you write and upload code. Both boards use it.</p>
