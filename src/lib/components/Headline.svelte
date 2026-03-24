@@ -39,14 +39,13 @@
 		modelPhase = 'preparing';
 
 		try {
-			// Let the loading UI paint before heavy module work starts.
 			await waitForPaint();
 			await ensureModelViewerLibrary();
 
 			modelPhase = 'fetching';
 			await waitForPaint();
 
-			const modelModule = await import('$lib/assets/830 Tie Breadboard - 830 Tie Breadboard.gltf?url');
+			const modelModule = await import('$lib/assets/breadboard.glb?url');
 			breadboardModel = modelModule.default;
 			modelPhase = 'ready';
 		} catch {
@@ -58,9 +57,7 @@
 		const observer = new IntersectionObserver(
 			(entries) => {
 				if (entries.some((entry) => entry.isIntersecting)) {
-					// Preload the renderer library near viewport, but do not start fetching
-					// the large model until the user explicitly clicks.
-					void ensureModelViewerLibrary();
+					void loadModelViewer();
 					observer.disconnect();
 				}
 			},
@@ -199,25 +196,19 @@
 							: modelPhase === 'preparing'
 								? 'Preparing 3D viewer...'
 								: modelPhase === 'fetching'
-									? 'Loading 3D model file...'
-									: '3D model ready to load'}
-					</p>
-					<p class="mt-1 text-sm text-black/70">
-						This file is large and may briefly pause on slower devices.
+									? 'Loading 3D model...'
+									: 'Loading 3D model...'}
 					</p>
 				</div>
-				<button
-					type="button"
-					class="h-11 rounded border border-black bg-black px-4 text-sm text-white transition-colors hover:bg-white hover:text-black"
-					onclick={() => void loadModelViewer()}
-					disabled={modelPhase === 'preparing' || modelPhase === 'fetching'}
-				>
-					{modelPhase === 'preparing' || modelPhase === 'fetching'
-						? 'Loading...'
-						: modelPhase === 'error'
-							? 'Retry 3D Preview'
-							: 'Load 3D Preview'}
-				</button>
+				{#if modelPhase === 'error'}
+					<button
+						type="button"
+						class="h-11 rounded border border-black bg-black px-4 text-sm text-white transition-colors hover:bg-white hover:text-black"
+						onclick={() => void loadModelViewer()}
+					>
+						Retry 3D Preview
+					</button>
+				{/if}
 			</div>
 		{/if}
 	</div>
