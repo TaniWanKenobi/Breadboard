@@ -1,8 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { dev } from '$app/environment';
 	import { page } from '$app/state';
 	import { locales, localizeHref } from '$lib/paraglide/runtime';
+	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import './layout.css';
+
+	injectAnalytics({ mode: dev ? 'development' : 'production' });
 
 	let { children } = $props();
 
