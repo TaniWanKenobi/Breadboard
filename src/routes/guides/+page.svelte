@@ -1,19 +1,10 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
 	import DocsFrame from '$lib/components/DocsFrame.svelte';
 </script>
 
 <DocsFrame>
 	<section>
-		<div class="mb-6 rounded-xl border-[1.1px] border-black bg-[#f4f4f4] p-6 shadow-[4px_4px_0_#000]">
-			<h2 class="text-2xl font-bold text-black">New: Firmware Guide</h2>
-			<p class="mt-2 text-base text-black/80">A firmware guide page is now live as a placeholder.</p>
-			<p class="mt-2 text-sm text-black/70">
-				Open <a href={resolve('/guides/firmware')} class="underline hover:text-black">Firmware Guide</a>
-			</p>
-		</div>
-
-		<div class="mb-6 rounded-[12px] border-[1.1px] border-black bg-[#f4f4f4] p-8 shadow-[4px_4px_0_#000]">
+<div class="mb-6 rounded-[12px] border-[1.1px] border-black bg-[#f4f4f4] p-8 shadow-[4px_4px_0_#000]">
 			<h1 class="text-4xl font-bold text-black md:text-5xl">Breadboard Basics</h1>
 			<p class="mt-2 text-base text-black/80">Complete Component Guide for the REXQualis Breadboard Kit</p>
 			<p class="mt-2 text-sm text-black/60">View this on <a href="https://linen-hub-2b8.notion.site/Breadboard-Basics-2cd0b458002c80c68681ede3b7cc6040?pvs=74" class="underline hover:text-black">Notion</a></p>

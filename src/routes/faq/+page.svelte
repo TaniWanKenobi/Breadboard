@@ -7,6 +7,7 @@
 		<div class="mb-6 rounded-[12px] border-[1.1px] border-black bg-[#f4f4f4] p-8 shadow-[4px_4px_0_#000]">
 			<h1 class="text-4xl font-bold text-black md:text-5xl">FAQ</h1>
 			<p class="mt-2 text-base text-black/80">Answers to common Breadboard questions.</p>
+			<p class="mt-2 text-base text-black/60">Questions? DM <a href="https://hackclub.enterprise.slack.com/team/U08R4Q9H8EB" class="underline">@Tanuki</a> or email <a href="mailto:tanishqgoyal590@gmail.com" class="underline">tanishqgoyal590@gmail.com</a></p>
 		</div>
 
 		<div class="prose prose-neutral max-w-none rounded-[12px] border-[1.1px] border-black bg-[#f4f4f4] p-8 shadow-[4px_4px_0_#000]">
