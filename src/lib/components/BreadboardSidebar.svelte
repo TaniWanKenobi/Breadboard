@@ -53,6 +53,26 @@
 	}
 
 	let isOpen = $state(false);
+	let sidebarTop = $state(80);
+
+	function updateSidebarTop() {
+		const header = document.querySelector('header');
+		if (header) {
+			const headerRect = header.getBoundingClientRect();
+			const headerBottom = Math.max(0, headerRect.bottom);
+			sidebarTop = headerBottom;
+		}
+	}
+
+	$effect(() => {
+		updateSidebarTop();
+		window.addEventListener('scroll', updateSidebarTop, { passive: true });
+		window.addEventListener('resize', updateSidebarTop, { passive: true });
+		return () => {
+			window.removeEventListener('scroll', updateSidebarTop);
+			window.removeEventListener('resize', updateSidebarTop);
+		};
+	});
 
 	function closeSidebar() {
 		isOpen = false;
@@ -74,7 +94,7 @@
 	Menu
 </button>
 
-<aside id="docs-sidebar" class="sidebar {isOpen ? 'open' : ''}">
+<aside id="docs-sidebar" class="sidebar {isOpen ? 'open' : ''}" style="top: {sidebarTop}px">
 	<button class="sidebar-close" type="button" onclick={closeSidebar} aria-label="Close docs navigation">Close</button>
 	<div class="sb-divider"></div>
 
@@ -155,7 +175,6 @@
 
 	.sidebar {
 		position: fixed;
-		top: 80px;
 		left: 0;
 		bottom: 0;
 		width: 210px;
@@ -164,6 +183,7 @@
 		display: flex;
 		flex-direction: column;
 		flex-shrink: 0;
+		overflow-y: auto;
 		z-index: 45;
 		transform: translateX(-105%);
 		transition: transform 200ms ease;
@@ -175,7 +195,6 @@
 
 	@media (min-width: 768px) {
 		.sidebar {
-			top: 96px;
 			transform: translateX(0);
 		}
 	}
