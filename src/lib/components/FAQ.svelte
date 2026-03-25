@@ -22,8 +22,7 @@
 				"Not at all! Breadboard is built for makers of all skill levels. If you've never touched a breadboard before, our getting started doc and tutorials will walk you through everything you need to know.",
 			bg: '#BD0F32',
 			fg: '#FFF',
-			subtle: 'rgba(255,255,255,0.82)',
-			extra: 'orpheus@hackclub.com'
+			subtle: 'rgba(255,255,255,0.82)'
 		},
 		{
 			title: 'Can I submit multiple projects?',
