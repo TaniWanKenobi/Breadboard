@@ -40,6 +40,8 @@
 > I built it as my initial pitch for a Hack Club internship. 
 >
 > Breadboard shipped as a real program, and the current codebase lives at [hackclub/breadboard](https://github.com/hackclub/breadboard) running at [breadboard.hackclub.com](https://breadboard.hackclub.com). 
+>
+> **This demo is hosted on [https://breadboard-delta.vercel.app/](https://breadboard-delta.vercel.app/)**
 
 <details>
   <summary>Table of Contents</summary>
