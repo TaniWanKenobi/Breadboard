@@ -67,8 +67,6 @@
 
 Breadboard is a Hack Club YSWS program (You Ship, We Ship): design a real breadboard project, submit the design, get a free component kit. This repo is the SvelteKit site I built to pitch it, covering the landing page, the program docs, and an email signup form.
 
-It's my project for Horizons (`#horizons` on the Hack Club Slack).
-
 ## Screenshots
 
 ![Breadboard landing page with the interactive canvas breadboard](docs/screenshots/home-hero.png)
