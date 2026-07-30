@@ -39,7 +39,7 @@
 >
 > I built it as my initial pitch for a Hack Club internship. 
 >
-> Breadboard shipped as a real program, and the current codebase lives at [hackclub/breadboard](https://github.com/hackclub/breadboard) running at [breadboard.hackclub.com](https://breadboard.hackclub.com). 
+> Breadboard shipped as a hack club program, and the current codebase lives at [hackclub/breadboard](https://github.com/hackclub/breadboard) running at [breadboard.hackclub.com](https://breadboard.hackclub.com). 
 >
 > **This demo is hosted on [https://breadboard-delta.vercel.app/](https://breadboard-delta.vercel.app/)**
 
@@ -67,7 +67,9 @@
 
 ## About The Project
 
-Breadboard is a Hack Club YSWS program (You Ship, We Ship): design a real breadboard project, submit the design, get a free component kit. This repo is the SvelteKit site I built to pitch it, covering the landing page, the program docs, and an email signup form.
+Breadboard is a Hack Club YSWS program (You Ship, We Ship) where you design a real breadboard project, submit the design, get a free component kit. 
+
+This repo is the SvelteKit site I built to pitch it and covers the landing page, the program docs, and an email signup form.
 
 ## Screenshots
 
