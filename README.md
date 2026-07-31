@@ -1,7 +1,7 @@
 <a id="readme-top"></a>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&weight=400&size=34&duration=2600&pause=900&color=BD0F32&center=true&vCenter=true&width=780&height=80&lines=Design+something+real.;Iterate.;Build.;You+Ship%2C+We+Ship." alt="Design something real. Iterate. Build.">
+  <img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&weight=400&size=34&duration=2600&pause=900&color=BD0F32&center=true&vCenter=true&width=780&height=80&lines=Design.;Iterate.;Build.;You+Ship%2C+We+Ship." alt="Design. Iterate. Build.">
 </p>
 
 <p align="center">
@@ -67,9 +67,9 @@
 
 ## About The Project
 
-Breadboard is a Hack Club YSWS program (You Ship, We Ship) where you design a real breadboard project, submit the design, get a free component kit. 
+Breadboard is a Hack Club YSWS program (You Ship, We Ship) where you design a breadboard project, submit the design, get a free component kit as well as other cool prizes from the shop :D
 
-This repo is the SvelteKit site I built to pitch it and covers the landing page, the program docs, and an email signup form.
+This repo is the SvelteKit site I built to pitch it and covers the landing page, the program docs, and an email signup form!
 
 ## Screenshots
 
@@ -91,11 +91,11 @@ SvelteKit 2 on Svelte 5 runes, Tailwind CSS 4, TypeScript. Google's [`<model-vie
 
 ## How It Works
 
-The landing page (`src/routes/+page.svelte`) composes components from `src/lib/components`: the interactive canvas breadboard, the signup card, three step cards, and the FAQ cards.
+The landing page (`src/routes/+page.svelte`) composes components from `src/lib/components`, including the interactive canvas breadboard, the signup card, three step cards, and the FAQ cards.
 
 The docs are a dozen routes sharing a `DocsFrame` wrapper for the header, sidebar, and footer. Content covers getting started, kit contents, breadboard basics, an LED workshop, firmware setup, journaling, design tips, and submission requirements.
 
-The signup form posts to a SvelteKit form action. The server validates the address, then tries Supabase, a Postgres connection string, and `data/email-signups.json` in that order, taking whichever works first. Duplicates count as success.
+The signup form posts to a SvelteKit form action. The server validates the address, then tries Supabase, a Postgres connection string, and `data/email-signups.json` in that order.
 
 ## Quick Start
 
@@ -141,6 +141,6 @@ npm run build
 
 ## Contact
 
-Tanishq Goyal - @Tanuki - [tanishqgoyal590@gmail.com](mailto:tanishqgoyal590@gmail.com)
+Tanishq Goyal - @Tanuki - [tanishq@hackclub.com](mailto:tanishq@hackclub.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
